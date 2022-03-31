@@ -21,9 +21,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 🎀HanBiJang는 공부 중🎀                          # the main title
+title: 🎀HanBi는 공부 중🎀                          # the main title
 
-tagline: :)   # it will display as the sub-title
+tagline: 반갑습니다 :)   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   반갑습니다 :)
@@ -45,7 +45,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     # - https://github.com/HanbiJang       # change to your github homepage
-    - https://twitter.com/username      # change to your twitter homepage
+    # - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/HanbiJang       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -81,10 +81,10 @@ theme_mode: dark # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
+img_cdn: '' #'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: '/assets/img/avatar/kkami.jpg'
+avatar: '/assets/img/kkami.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
