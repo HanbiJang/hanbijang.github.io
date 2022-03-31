@@ -2,40 +2,53 @@
 title: Writing a New Post
 author: cotes
 date: 2019-08-08 14:10:00 +0800
-categories: [Blogging, Tutorial]
-tags: [writing]
+categories: [jekyll 포스팅 튜토리얼 번역]
+tags:
 render_with_liquid: false
 ---
 
-This post will guide you how to write a post on _Chirpy_ theme. Even if you have previous experience with Jekyll, this article is worth reading, because many features require specific variables to be set.
+이 게시물은 _Chirpy_ 테마에 대한 게시물을 작성하는 방법을 안내합니다.    
+이전에 _Jekyll_을 사용한 경험이 있더라도 이 기사는 읽을 가치가 있습니다. 많은 기능에서 특정 변수를 설정해야 하기 때문입니다.   
 
-## Naming and Path
+## 이름 지정 및 경로   
 
-Create a new file named `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} and put it in the `_posts`{: .filepath} of the root directory. Please note that the `EXTENSION`{: .filepath} must be one of `md`{: .filepath} and `markdown`{: .filepath}. If you want to save time of creating files, please consider using the plugin [`Jekyll-Compose`](https://github.com/jekyll/jekyll-compose) to accomplish this.
 
-## Front Matter
 
-Basically, you need to fill the [Front Matter](https://jekyllrb.com/docs/front-matter/) as below at the top of the post:
+`YYYY-MM-DD-TITLE.EXTENSION`{: .filepath}라는 이름의 파일을 생성하고.    
+블로그 폴더 내의  `_posts`{: .filepath} 폴더에 집어넣습니다.   
+
+파일의 확장자는 .md나 .markdown 이어야 합니다.   
+파일 생성 시간을 절약하려면 이 플러그인 [`Jekyll-Compose`](https://github.com/jekyll/jekyll-compose) 을 사용하여 이를 수행하는 것이 좋습니다.   
+
+## 머리말   
+
+기본적으로 게시물 상단에 다음과 같은 [머리말](https://jekyllrb.com/docs/front-matter/) 을 작성해야 합니다.   
 
 ```yaml
 ---
-title: TITLE
+title: 타이틀
 date: YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
+categories: [카테고리1, 카테고리2]
+tags: [태그1]     # 태그 이름은 소문자여야합니다
 ---
 ```
 
-> The posts' _layout_ has been set to `post` by default, so there is no need to add the variable _layout_ in the Front Matter block.
+주의 점!
+> 게시물의 _레이아웃_은 기본적으로 설정되어 있으므로 머리말 블록에 `layout : post` 를 추가할 필요가 없습니다!
 {: .prompt-tip }
+}
 
-### Timezone of Date
 
-In order to accurately record the release date of a post, you should not only set up the `timezone` of `_config.yml`{: .filepath} but also provide the post's timezone in variable `date` of its Front Matter block. Format: `+/-TTTT`, e.g. `+0800`.
+### 날짜의 시간대
 
-### Categories and Tags
+게시물의 릴리즈 날짜를 정확히 기록하려면 `_config.yml`{: .filepath}} 파일의 `timezone`설정을 해야합니다. 한국은 `Asia/Soul` 입니다.   
+또한 게시물의 타임존을 머리말 블록의 `date`에 제공합니다. 형식은 `+/-TTTT` 예를들어 `+0800` 같이   
 
-The `categories` of each post are designed to contain up to two elements, and the number of elements in `tags` can be zero to infinity. For instance:
+### 카테고리와 태그
+
+각 `categories`포스트의 요소는 최대 2개의 요소를 포함하도록 설계되었으며 요소의 `tags`수는 0에서 무한대일 수 있습니다.    
+예를 들어:
+
 
 ```yaml
 ---
@@ -44,11 +57,13 @@ tags: [bee]
 ---
 ```
 
-### Author Information
+### 작성자 정보
 
 The author information of the post usually does not need to be filled in the _Front Matter_ , they will be obtained from variables `social.name` and the first entry of `social.links` of the configuration file by default. But you can also override it as follows:
+게시물의 작성자 정보는 일반적으로 _머리말_에 입력할 필요가 없으며 기본적으로 `_config.yml` 파일의 `social.name` 변수와 `social.links`의 첫 번째 항목에서 가져옵니다.    
 
 Add author information in `_data/authors.yml` (If your website doesn't have this file, don't hesitate to create one.)
+`_data/authors.yml` 에 작성자 정보를 추가하는 것을 통해 재정의 가능합니다 (웹 사이트에 이 파일이 없으면 주저하지 말고 작성하세요!)
 
 ```yaml
 <author_id>:
@@ -58,7 +73,7 @@ Add author information in `_data/authors.yml` (If your website doesn't have this
 ```
 {: file="_data/authors.yml" }
 
-And then set up the custom author in the post's YAML block:
+그런 다음 게시물의 YAML 블록에서 사용자 지정 작성자를 설정합니다
 
 ```yaml
 ---
@@ -66,24 +81,37 @@ author: <author_id>
 ---
 ```
 
-> Another benefit of reading the author information from the file `_data/authors.yml`{: .filepath } is that the page will have the meta tag `twitter:creator`, which enriches the [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution) and is good for SEO.
+> Another benefit of reading the author information from the file `_data/authors.yml`{: .filepath } is that the page will have the meta tag `twitter:creator`, 
+which enriches the [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution) and is good for SEO.
 {: .prompt-info }
 
-## Table of Contents
+> `_data/authors.yml`{: .filepath } 파일에서 작성 정보를 읽는 방식의 장점은 페이지가 `twitter:creator` 메타 태그를 가지게 되어 [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution)
+를 풍부하게 하고 검색엔진 최적화에 좋다는 것입니다.
 
-By default, the **T**able **o**f **C**ontents (TOC) is displayed on the right panel of the post. If you want to turn it off globally, go to `_config.yml`{: .filepath} and set the value of variable `toc` to `false`. If you want to turn off TOC for a specific post, add the following to the post's [Front Matter](https://jekyllrb.com/docs/front-matter/):
+
+## 목차 만들기
+
+By default, the **T**able **o**f **C**ontents (TOC) is displayed on the right panel of the post. If you want to turn it off globally,
+go to `_config.yml`{: .filepath} and set the value of variable `toc` to `false`. 
+If you want to turn off TOC for a specific post, add the following to the post's [Front Matter](https://jekyllrb.com/docs/front-matter/):
+
+목차는 오른쪽 패널에 표시됩니다.   
+1.  블로그 전체에서 목차를 끄려면 `_config.yml`에서 아래와 같이 `toc` 값을 `false` 로 수정합니다.
+2. 특정 게시물에서만 목차를 끄려면 _머릿말_ 에 아래 코드와 같이 씁니다. 
 
 ```yaml
+(머릿말)
 ---
 toc: false
 ---
 ```
 
-## Comments
+## 댓글
 
 The global switch of comments is defined by variable `comments.active` in the file `_config.yml`{: .filepath}. After selecting a comment system for this variable, comments will be turned on for all posts.
 
 If you want to close the comment for a specific post, add the following to the **Front Matter** of the post:
+
 
 ```yaml
 ---
