@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: HanBiJang의 공부 블로그                          # the main title
+title: 🎀HanBiJang는 공부 중🎀                          # the main title
 
 tagline: :)   # it will display as the sub-title
 
@@ -32,10 +32,10 @@ description: >-                        # used by seo meta and the atom feed
 url: 'https://hanbijang.github.io'
 
 github:
-  username: github_username             # change to your github username
+  username: HanbiJang             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username:             # change to your twitter username
 
 social:
   # Change to your full name.
@@ -44,6 +44,7 @@ social:
   email: hanbijang.dev@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    # - https://github.com/HanbiJang       # change to your github homepage
     - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/HanbiJang       # change to your github homepage
     # Uncomment below to add more social links
@@ -83,7 +84,7 @@ theme_mode: dark # [light|dark]
 img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: 'img/kkami.jpg'
+avatar: '/assets/img/avatar/kkami.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
