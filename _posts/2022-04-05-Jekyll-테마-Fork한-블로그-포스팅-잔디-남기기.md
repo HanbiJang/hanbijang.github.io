@@ -177,8 +177,15 @@ error: failed to push some refs to 'https://github.com/HanbiJang/new_repo.git'
 
 아직도 한 줄 오류가 뜨긴 하지만 말끔히 master브랜치의 작업내역, 커밋 내역이 완벽히 복사가 되어 새브랜치 A에 만들어졌고, 잔디도 추가되었다!
 
-나는 귀찮아서 그냥 원래 작업하던 깃허브 레포지토리에서 작업할 것이므로, 여전히 잔디 표시가 안 될 것이다.
-이렇게 가끔 가다 `bare clone` , `mirror push` 를 해주면 그만이니 상관 없다.
+~~나는 귀찮아서 그냥 원래 작업하던 깃허브 레포지토리에서 작업할 것이므로, 여전히 잔디 표시가 안 될 것이다.
+이렇게 가끔 가다 `bare clone` , `mirror push` 를 해주면 그만이니 상관 없다.~~
+
+⇒ 수정! 전에 만들어둔 Fork된 레포지토리 명을 `Username.github.io` 에서 다른 것으로 바꾸고,
+해당 잔디 심기용 레포의 이름을 `Username.github.io`로 만든다!
+몇 분 후에 다시 깃허브 홈페이지가 만들어집니다.
+
+만약 Chirpy테마 블로그에서 문제가 있다면 다음 포스트에서 문제를 해결하면 됩니다 :)
+[깃허브 블로그 오류 해결](https://hanbijang.github.io/posts/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/)
 
 ---
 
